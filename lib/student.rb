@@ -40,7 +40,9 @@ class Student
   end
 
   def self.create(attributes)
-    student = Student.new(attributes.each {|k,v| self.send(("#{k}="),v)})
+    name = attributes[name:]
+    grade = attributes[grade:]
+    student = Student.new(name, grade)
     student.save
     student
   end
